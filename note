@@ -1,0 +1,67 @@
+Token
+    name
+    children
+    parents
+    partOfSpeech
+
+Map<Token>
+
+name        : S
+children    : [[NP, VP], [Aux, NP, VP], [VP]]
+parents     : gama
+partOfSpeech: false
+
+name        : NP
+children    : [[Pronoun],[Proper-Noun],[Det,Nominal]]
+parents     : [S, VP]
+partOfSpeech: false
+
+
+name        : VP
+children    : [[Verb], [Verb, NP], [Verb, NP, PP], [Verb, PP], [VP, PP]]
+parents     : [S, VP]
+partOfSpeech: false
+
+name        : Aux
+children    : [[can], [will]]
+parents     : [S, ]
+partOfSpeech: true
+
+name        : Det
+children    : [[the], [that]]
+parents     : [NP, ]
+partOfSpeech: true
+
+name        : Pronoun
+children    : [[he], [she]]
+parents     : [NP, ]
+partOfSpeech: true
+
+name        : Proper-Noun
+children    : [[mary], [john]]
+parents     : [NP, ]
+partOfSpeech: true
+
+name        : Nominal
+children    : [[Noun], [Nominal, Noun], [Nominal, PP]]
+parents     : [NP, Nominal]
+partOfSpeech: true
+
+name        : Noun
+children    : [[book], [flight]]
+parents     : [Nominal, ]
+partOfSpeech: true
+
+name        : Verb
+children    : [[do], [work], [book]]
+parents     : [VP, ]
+partOfSpeech: true
+
+name        : PP
+children    : [[Prep, NP]]
+parents     : [VP, Nominal, ]
+partOfSpeech: false
+
+name        : Prep
+children    : [[in], [on], [at]]
+parents     : [PP, ]
